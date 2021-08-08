@@ -1,5 +1,13 @@
 # Principal Mapper
 
+## My Most Used Commands
+* `pmapper graph create`
+* `pmapper graph list`
+* which roles esclate priv `pmapper --account <acct#> query -s 'preset privesc *'`
+* `pmapper query 'who can do iam:CreateUser'`
+* visualize `pmapper --account <acct#> visualize --filetype svg`
+
+## Purpose
 Principal Mapper (PMapper) is a script and library for identifying risks in the configuration of AWS Identity and 
 Access Management (IAM) for an AWS account or an AWS organization. It models the different IAM Users and Roles in an 
 account as a directed graph, which enables checks for privilege escalation and for alternate paths an attacker could 
