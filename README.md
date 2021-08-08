@@ -1,10 +1,19 @@
-# Principal Mapper
+# Principal Mapper (Map your IAM)
 
-## My Most Used Commands
+## My Most Used Commands ([query wiki](https://github.com/nccgroup/PMapper/wiki/Query-Reference)
 * `pmapper graph create`
 * `pmapper graph list`
 * which roles esclate priv `pmapper --account <acct#> query -s 'preset privesc *'`
 * `pmapper query 'who can do iam:CreateUser'`
+* what roles can execute expensive instances `pmapper --account 000000000000 argquery -s --action 'ec2:RunInstances' --condition 'ec2:InstanceType=c6gd.16xlarge'`
+* clustering by type of tag `pmapper query 'preset clusters type'`
+* who is connected `pmapper query 'preset connected * *'`
+* who can getobject from specific ip`pmapper query 'who can do s3:GetObject with * when aws:SourceIp=*'`
+* who multifactor `pmapper query 'who can do aws:MultiFactorAuthPresent'`
+* who can run ec2 `pmapper query 'who can do ec2:RunInstances'`
+* who can create function `pmapper query 'who canlambda:CreateFunction'`
+* endgame which is who can expose resources to public (s3) `pmapper query 'preset endgame s3'`
+* endgame all resources `pmapper argquery --preset endgame --resource '*'`
 * visualize `pmapper --account <acct#> visualize --filetype svg`
 
 ## Purpose
