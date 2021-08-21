@@ -1,20 +1,31 @@
 # Principal Mapper (Map your IAM)
 
-## My Most Used Commands ([query wiki](https://github.com/nccgroup/PMapper/wiki/Query-Reference)
-* `pmapper graph create`
+## MattN-HB Most Used Commands  ([query wiki](https://github.com/nccgroup/PMapper/wiki/Query-Reference)and [CLI Ref Guide](com/nccgroup/PMapper/wikihttps://github.com/nccgroup/PMapper/wiki))
+
+Note: Created custom bash script to automate all this `fullanalysis.sh` outputs are `analysis.txt` and two svg visualizations
+
+* `pmapper graph create --include-regions us-east-1`
 * `pmapper graph list`
+* Stats of the graph of the account `pmapper graph display`
+* list iam roles in table via aws cli `aws iam list-users --output table`
+* Get credentialed IAM reports from CLI `aws iam generate-credential-report` and read it `aws iam get-credential-report --output text | base64 --decode >> credentialreport.csv`
 * which roles esclate priv `pmapper --account <acct#> query -s 'preset privesc *'`
 * `pmapper query 'who can do iam:CreateUser'`
 * what roles can execute expensive instances `pmapper --account 000000000000 argquery -s --action 'ec2:RunInstances' --condition 'ec2:InstanceType=c6gd.16xlarge'`
 * clustering by type of tag `pmapper query 'preset clusters type'`
 * who is connected `pmapper query 'preset connected * *'`
 * who can getobject from specific ip`pmapper query 'who can do s3:GetObject with * when aws:SourceIp=*'`
+* who can deleteobject from s3 `pmapper argquery  --action 's3:delete-objects'`
 * who multifactor `pmapper query 'who can do aws:MultiFactorAuthPresent'`
 * who can run ec2 `pmapper query 'who can do ec2:RunInstances'`
-* who can create function `pmapper query 'who canlambda:CreateFunction'`
+* who can create function `pmapper query 'who can do lambda:CreateFunction'`
 * endgame which is who can expose resources to public (s3) `pmapper query 'preset endgame s3'`
 * endgame all resources `pmapper argquery --preset endgame --resource '*'`
 * visualize `pmapper --account <acct#> visualize --filetype svg`
+* visualize priv users `pmapper --account $account visualize --only-privesc --filetype svg`
+* Built in analysis `pmapper analysis --output-type text`
+
+OG Forked README BELOW>>
 
 ## Purpose
 Principal Mapper (PMapper) is a script and library for identifying risks in the configuration of AWS Identity and 

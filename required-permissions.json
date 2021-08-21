@@ -7,6 +7,8 @@
             "Action": [
                 "iam:List*",
                 "iam:Get*",
+                "iam:GenerateCredentialReport",
+                "iam:GetCredentialReport",
                 "organizations:List*",
                 "organizations:Describe*",
                 "s3:ListAllMyBuckets",
