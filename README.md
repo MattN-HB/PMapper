@@ -2,7 +2,7 @@
 
 ## MattN-HB Most Used Commands  ([query wiki](https://github.com/nccgroup/PMapper/wiki/Query-Reference)and [CLI Ref Guide](com/nccgroup/PMapper/wikihttps://github.com/nccgroup/PMapper/wiki))
 
-Note: Created custom bash script to automate all this `fullanalysis.sh` outputs are `analysis.txt` and two svg visualizations
+Note: Created custom bash script to automate all this `fullanalysis.sh` outputs are `analysis.txt`, `credentialreport.csv` and two svg visualizations.
 
 * `pmapper graph create --include-regions us-east-1`
 * `pmapper graph list`
