@@ -27,6 +27,7 @@
                 "codebuild:ListProjects",
                 "codebuild:BatchGetProjects",
                 "backup:PutBackupVaultNotifications",
+                "backup:GetBackupVaultNotifications",
                 "autoscaling:DescribeLaunchConfigurations"
             ],
             "Resource": "*"
