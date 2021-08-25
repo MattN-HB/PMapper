@@ -26,6 +26,7 @@
                 "lambda:ListFunctions",
                 "codebuild:ListProjects",
                 "codebuild:BatchGetProjects",
+                "backup:PutBackupVaultNotifications",
                 "autoscaling:DescribeLaunchConfigurations"
             ],
             "Resource": "*"
